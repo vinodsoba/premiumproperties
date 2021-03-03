@@ -1,0 +1,10 @@
+ul.search-result{
+    position: absolute;
+    top: 55%;
+    left: 39%;
+    background-color: var(--mainWhite);
+    padding: 20px;
+    li {
+        list-style: none;
+    }
+}

@@ -1,23 +1,40 @@
-import logo from './logo.svg';
+import React from 'react'
+import { Route } from 'react-router-dom'
 import './App.css';
+
+//layouts
+import HomepageLayout from './layouts/HomepageLayout'
+import MainLayout from './layouts/MainLayout'
+
+//pages
+import Homepage from './pages/Homepage'
+import Test from './pages/Test'
+import YourPage from './pages/YourPage'
+import PropertyListing from './pages/PropertyListing'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Route path='/property-search' render={() => (
+        <MainLayout>
+          <PropertyListing />
+        </MainLayout>
+      )}/>
+      <Route exact path='/' render={() => (
+        <HomepageLayout>
+          <Homepage />
+        </HomepageLayout>
+      )} />
+      <Route path='/test' render={() => (
+        <HomepageLayout>
+          <Test />
+        </HomepageLayout>
+      )} />
+      <Route path='/yourpage/:propertyId' render={() => (
+        <HomepageLayout>
+          <YourPage />
+        </HomepageLayout>
+      )} />
     </div>
   );
 }

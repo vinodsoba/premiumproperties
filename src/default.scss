@@ -1,0 +1,28 @@
+html {
+    --font-size: 1.6rem;
+    --font-family: 'Roboto', sans-serif, arial;
+    --mainBlack: #000;
+    --mainWhite: #fff;
+    --darkBlue: #0e437b;
+    --lightBlue: #137beb;
+    --lightGrey: #cdd4dc;
+    --darkGrey: #8e9093;
+   
+   }
+   
+   @mixin button {
+       background-color: var(--white);
+       padding: 13px 50px;
+       margin-top: 20px;
+       color:  var(--button-text);
+       border-style: 1px solid var(--button-text);
+       border-radius: 0px;
+     }
+     
+     @mixin button-hover {
+       background-color: var(--black);
+       transition: all 0.5s ease;
+       border-style: 1px solid var(--black);
+       border-radius: 0px;
+     }
+     
