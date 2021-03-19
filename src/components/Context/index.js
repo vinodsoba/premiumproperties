@@ -2,8 +2,11 @@ import * as React from 'react'
 
 
 const DefaultState = {
-  propertyListings: []
+  propertyListings: [],
+  filter: {}
 }
+
+
 
 const PropertyListingsContext = React.createContext(DefaultState)
 
@@ -11,11 +14,17 @@ export class PropertyListingsProvider extends React.Component {
     state = DefaultState
   
     componentDidMount() {
-      fetch('data.js')
+      fetch('/server/listings.json')
         .then(res => res.json())
         .then(res => {
           this.setState({ propertyListings: res })
         })
+    }
+
+    updateFilter = filter => {
+      this.setState({
+        filter
+      })
     }
   
     render() {
@@ -25,7 +34,8 @@ export class PropertyListingsProvider extends React.Component {
       return (
         <PropertyListingsContext.Provider
           value={{
-            propertyListings
+            propertyListings,
+            updateFilter: this.updateFilter,
           }}
         >
           {children}
