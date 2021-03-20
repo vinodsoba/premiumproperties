@@ -4,6 +4,9 @@
     background-size: cover;
     background-attachment: scroll;
     height: 500px;
+    h1 {
+      color: var(--mainWhite);
+    }
   }
   
   @media screen and (min-width: 992px) {
