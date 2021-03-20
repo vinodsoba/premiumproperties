@@ -9,7 +9,7 @@ import MainLayout from './layouts/MainLayout'
 //pages
 import Homepage from './pages/Homepage'
 import Test from './pages/Test'
-import YourPage from './pages/YourPage'
+import Details from './pages/Detail'
 import PropertyListing from './pages/PropertyListing'
 
 function App() {
@@ -30,9 +30,9 @@ function App() {
           <Test />
         </HomepageLayout>
       )} />
-      <Route path='/yourpage/:propertyId' render={() => (
+      <Route path='/details/:propertyId' render={() => (
         <HomepageLayout>
-          <YourPage />
+          <Details />
         </HomepageLayout>
       )} />
     </div>
