@@ -1,4 +1,5 @@
 import React from 'react'
+import Map from './../../components/Map'
 
 export default function Details({ propertyId }) {
     const features = [
@@ -13,6 +14,7 @@ export default function Details({ propertyId }) {
         <div>
             Show details for property with Id of {propertyId}
             <div features={features}></div>
+            <Map />
         </div>
     )
 }
