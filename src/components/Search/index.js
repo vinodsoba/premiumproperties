@@ -10,6 +10,8 @@ const SearchBar = ({ searchQuery, setSearchQuery})  => {
         e.preventDefault()
         
     };
+
+
     return(
         <form action="/property-search" method="get" autoComplete="off" onSubmit={onSubmit} className="search-form">
             <label htmlFor="header-search">
@@ -17,7 +19,7 @@ const SearchBar = ({ searchQuery, setSearchQuery})  => {
             </label>
             <input
                 value={searchQuery}
-                onInput={e => setSearchQuery(e.target.value)}
+                
                 type="text"
                 id="header-search"
                 placeholder="Search by PostCode, Town, City"
