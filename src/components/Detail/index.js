@@ -1,5 +1,6 @@
 import React from 'react'
 import Map from './../../components/Map'
+import KeyFeatures from './../../components/KeyFeature'
 
 export default function Details({ propertyId }) {
     const features = [
@@ -13,7 +14,7 @@ export default function Details({ propertyId }) {
     return (
         <div>
             Show details for property with Id of {propertyId}
-            <div features={features}></div>
+            <KeyFeatures features={features} />
             <Map />
         </div>
     )
